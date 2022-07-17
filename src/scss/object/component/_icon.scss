@@ -1,0 +1,43 @@
+.c-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &--main {
+        color: $color-main;
+    }
+    &--sub {
+        color: $color-sub;
+    }
+    &--accent {
+        color: $color-accent;
+    }
+    &--main {
+        &--w {
+            background-color: $color-main;
+            color: #fff;
+        }
+    }
+    &--sub {
+        &--w {
+            background-color: $color-sub;
+            color: #fff;
+        }
+    }
+    &--accent {
+        &--w {
+            background-color: $color-accent;
+            color: #fff;
+        }
+    }
+    &--circle {
+        border-radius: 100%;
+    }
+    &--lg {
+        height: 50px;
+        width: 50px;
+    }
+    &--md {
+        height: 35px;
+        width: 35px;
+    }
+}

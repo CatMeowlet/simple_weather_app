@@ -1,0 +1,641 @@
+.c-label01 {
+  font-weight: bold;
+  color: $color-text01;
+  @include font-line(18, 36);
+  &--hidden {
+    opacity: 0;
+  }
+  &--displayNone {
+    display: none;
+  }
+  &--require {
+    span {
+      color: $color-required;
+    }
+  }
+  &--optional {
+    span {
+      color: $color-optional;
+    }
+  }
+}
+.c-file01 {
+  position: relative;
+  color: $color-text01;
+  padding-bottom: 25px;
+  &--error {
+    border: 2px solid $color-error;
+  }
+  &__label {
+    font-weight: 700;
+    @include font-line(18, 25);
+  }
+  &__button {
+    input[type='file'] {
+      display: none;
+    }
+  }
+  &__indicator {
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+.c-text01,
+.c-textarea01,
+.c-date01 {
+  font-family: $font-family-base;
+  color: $color-text-default;
+  font-weight: bold;
+  border: 1px solid #000;
+  position: relative;
+  background: #ffffff;
+  @include font-line(16);
+  @include is-responsive {
+    @include font-line(15);
+  }
+  &::placeholder {
+    font-weight: bold;
+    letter-spacing: 0.08em;
+  }
+  &--hidden {
+    visibility: hidden;
+    position: absolute;
+  }
+  &--readonly {
+    background-color: rgb(184, 184, 184);
+  }
+}
+.c-text01,
+.c-date01 {
+  width: 100%;
+  padding: 18px 16px;
+  @include is-responsive {
+    height: 56px;
+  }
+  @include is-laptop {
+    height: 56px;
+  }
+  &:focus {
+    border-color: $color-accent;
+  }
+  &--error {
+    border-color: $color-error;
+  }
+  &--disabled {
+    background-color: #f4f4f4;
+  }
+}
+.c-textarea01 {
+  padding: 24px;
+  width: 100%;
+  @include is-responsive {
+    height: 100px;
+  }
+  @include is-laptop {
+    height: 240px;
+  }
+  &:focus {
+    border-color: $color-accent;
+  }
+  &--error {
+    border-color: #d65c5c;
+  }
+  &--disabled {
+    background-color: #f4f4f4;
+  }
+}
+.c-select01 {
+  padding: 5px 10px;
+  border: solid 1px #000;
+  width: 100%;
+  background: #fff url('../tiny/icon/bg_form_select_01.svg') no-repeat;
+  background-position: right 14px center;
+  background-size: 16px 8px;
+  height: 50px;
+  font-size: 1.125rem;
+  width: 100%;
+  margin: 11px 0px 25px 0px;
+  appearance: none;
+  &:focus {
+    border: 1px solid $color-accent;
+    outline: none;
+  }
+}
+
+.c-checkbox01 {
+  $checkbox: &;
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  position: relative;
+  @include is-responsive {
+    padding: 5px;
+  }
+  @include is-laptop {
+    padding: 8px;
+  }
+  &__input {
+    width: 0 !important;
+    height: 0 !important;
+    margin: auto !important;
+    padding: 0 !important;
+    appearance: none;
+    position: absolute;
+    z-index: -999;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    &:checked + #{$checkbox}__parts {
+      &::after {
+        content: '\f00c';
+        display: flex;
+        width: 18px;
+        height: 18px;
+        font-family: 'Font Awesome 5 Free';
+        font-style: normal;
+        font-weight: 900;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        top: 3px;
+        left: 1px;
+        margin: auto;
+        z-index: 1;
+        color: #fff;
+        transform: scale(0.7);
+      }
+      &:before {
+        background: $color-accent;
+      }
+    }
+  }
+  &__parts {
+    padding-left: 23px;
+    margin-right: 3px;
+    position: relative;
+    @include font-line(14, 14);
+    display: inline-flex;
+    align-items: center;
+    height: 20px;
+    color: $color-text04;
+    &::before {
+      background: #fff;
+      border: 1px solid #333;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      margin: auto 3px auto auto;
+    }
+  }
+}
+.c-checkbox02 {
+  $checkbox: &;
+  position: relative;
+  margin-bottom: 3px;
+  &__input {
+    width: 0 !important;
+    height: 0 !important;
+    margin: auto !important;
+    padding: 0 !important;
+    appearance: none;
+    position: absolute;
+    z-index: -999;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    &:checked + #{$checkbox}__label {
+      background: $color-accent;
+      #{$checkbox}__check {
+        &:after {
+          content: '\f00c';
+          display: flex;
+          width: 18px;
+          height: 18px;
+          font-family: 'Font Awesome 5 Free';
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-style: normal;
+          font-weight: 900;
+          color: $color-text04;
+          margin: auto 0;
+          align-items: center;
+          justify-content: center;
+          transform: scale(0.7);
+        }
+      }
+    }
+  }
+  &__check {
+    display: flex;
+    justify-content: center;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    margin: 0 5px 0 0;
+    border: solid 1px #000;
+  }
+  &__name {
+    @include font-line(14, 14);
+    width: calc(100% - 22px);
+    color: $color-text04;
+  }
+  &__label {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    @include is-responsive {
+      padding: 5px;
+    }
+    @include is-laptop {
+      padding: 8px;
+    }
+  }
+}
+.c-checkbox03 {
+  $checkbox: &;
+  position: relative;
+  &__input {
+    width: 0 !important;
+    height: 0 !important;
+    margin: auto !important;
+    padding: 0 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    z-index: -999;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    &:checked + #{$checkbox}__label {
+      #{$checkbox}__check {
+        background: $color-accent;
+        &:after {
+          content: '\f00c';
+          display: flex;
+          width: 19px;
+          height: 19px;
+          font-family: 'Font Awesome 5 Free';
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-style: normal;
+          font-weight: 900;
+          color: #fff;
+          margin: auto 0;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          transform: scale(0.7);
+        }
+      }
+    }
+  }
+  &__check {
+    content: '';
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    margin: 0 5px 0 0;
+    border: solid 1px #c9c9c9;
+    border-radius: none;
+    &:before {
+    }
+  }
+  &__name {
+    width: calc(100% - 18px);
+    padding-left: 7px;
+  }
+  &__label {
+    display: flex !important;
+    align-items: center;
+    position: relative;
+    color: $color-text04;
+  }
+}
+.c-checkbox04 {
+  $checkbox: &;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  position: relative;
+  @include is-responsive {
+    padding: 5px;
+  }
+  @include is-laptop {
+    padding: 8px;
+  }
+  &__input {
+    width: 0 !important;
+    height: 0 !important;
+    margin: auto !important;
+    padding: 0 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    z-index: -999;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    &:checked + #{$checkbox}__parts {
+      &::after {
+        content: '\f00c';
+        display: flex;
+        width: 18px;
+        height: 18px;
+        font-family: 'Font Awesome 5 Free';
+        font-style: normal;
+        font-weight: 900;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        top: 3px;
+        bottom: 0;
+        left: 1px;
+        margin: auto;
+        z-index: 1;
+        color: #fff;
+        transform: scale(0.7);
+      }
+      &:before {
+        background: $color-accent;
+      }
+    }
+  }
+  &__parts {
+    padding-left: 23px;
+    margin-right: 3px;
+    position: relative;
+    @include font-line(14, 14);
+    display: inline-block;
+    &::before {
+      background: #fff;
+      border: 1px solid #333;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      margin: auto;
+    }
+  }
+}
+.c-checkbox05 {
+  $checkbox: &;
+  display: inline-block;
+  align-items: center;
+  @include is-responsive {
+  }
+  @include is-laptop {
+  }
+  &__input {
+    display: none;
+    &:checked + #{$checkbox}__parts {
+      &::after {
+        content: '\f00c';
+        display: flex;
+        width: 18px;
+        height: 18px;
+        font-family: 'Font Awesome 5 Free';
+        font-style: normal;
+        font-weight: 900;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        margin: auto;
+        z-index: 1;
+        color: #fff;
+      }
+      &:before {
+        background: $color-accent;
+      }
+    }
+  }
+  &__parts {
+    padding-left: 23px;
+    margin-right: 3px;
+    position: relative;
+    @include font-line(14, 14);
+    display: inline-block;
+    &::before {
+      background: #fff;
+      border: 1px solid #333;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      margin-right: 3px;
+    }
+  }
+}
+.c-radio01 {
+  $radio: &;
+  &__input {
+    display: none;
+    &:checked + #{$radio}__label {
+      #{$radio}__check {
+        &:after {
+          content: '';
+          display: flex;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: $color-accent;
+          margin: auto 0;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  &__check {
+    display: flex;
+    justify-content: center;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    margin: 0 5px 0 0;
+    border-radius: 50%;
+    border: solid 1px #000;
+    &:before {
+    }
+  }
+  &__name {
+    width: calc(100% - 25px);
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.c-radio02 {
+  $radio: &;
+  &__input {
+    display: none;
+    &:checked + #{$radio}__label {
+      background: #eee;
+      #{$radio}__check {
+        &:after {
+          content: '';
+          display: flex;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: $color-accent;
+          margin: auto 0;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  &__check {
+    display: flex;
+    justify-content: center;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    margin: 0 5px 0 0;
+    border: solid 1px #000;
+    border-radius: 50%;
+  }
+  &__name {
+    width: calc(100% - 20px);
+    @include font-line(14, 14);
+  }
+  &__label {
+    min-height: 41px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    @include is-responsive {
+      padding: 5px;
+    }
+    @include is-laptop {
+      padding: 8px;
+    }
+  }
+}
+
+.c-radio03 {
+  $radio: &;
+  &__input {
+    display: none;
+    &:checked + #{$radio}__label {
+      #{$radio}__check {
+        background: $color-accent;
+      }
+    }
+  }
+  &__check {
+    display: flex;
+    justify-content: center;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    margin: 0 5px 0 0;
+    border: solid 1px #000;
+    border-radius: 50%;
+  }
+  &__name {
+    width: calc(100% - 25px);
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.c-radio04 {
+  $radiobox: &;
+  display: inline-block;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  @include is-responsive {
+    padding: 5px;
+  }
+  @include is-laptop {
+    padding: 11px 8px;
+  }
+  &__input {
+    display: none;
+    &:checked + #{$radiobox}__parts {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  &__parts {
+    height: 15px;
+    padding: 0 0 0 25px;
+    @include font-line(14, 14);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: '';
+      margin: auto;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    // チェックマーク
+    &::before {
+      background-color: $color-accent;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      left: 4px;
+      opacity: 0;
+      z-index: 2;
+    }
+    // チェックボックス
+    &::after {
+      background-color: #ececec;
+      border: 1px solid #838383;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}

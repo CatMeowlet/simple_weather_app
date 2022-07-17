@@ -1,0 +1,15 @@
+/***
+    Param: font-size(PX) , line-height
+    Return: font-size, line-height (calculated)
+    ex.
+    @include font-line(16,16) : font-size = 1rem , line-height = 1
+    @include font-line(16,26) : font-size = 1rem , line-height = 1.625 or 1.5
+*/
+@use 'sass:math';
+@mixin font-line($size, $line: null) {
+    $rem: math.div($size, $font-size-base);
+    font-size: #{$rem}rem;
+    @if $line !=null {
+        line-height: math.div($line, $size);
+    }
+}

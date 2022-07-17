@@ -1,0 +1,33 @@
+.c-ribbon {
+    background: #ffc200;
+    @include font-line(16);
+    font-weight: 600;
+    padding: 5px 15px;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    top: 0;
+    &:before,
+    &:after {
+        content: " ";
+        position: absolute;
+    }
+    &:before {
+        border-bottom: 13px solid #ff8a00;
+        border-right: 14px solid transparent;
+        height: 0;
+        right: -0.5px;
+        top: 38px;
+        transform: rotate(90deg);
+        width: 0;
+    }
+    &:after {
+        border-color: #ffc200 #ffc200 transparent;
+        border-style: solid;
+        border-width: 9px 19px 9px 19px;
+        top: 10px;
+        left: -20px;
+        transform: rotate(90deg);
+        z-index: 2;
+    }
+}

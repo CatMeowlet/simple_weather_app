@@ -1,0 +1,101 @@
+/* margin - utility
+--------------------------------------------------------- */
+
+/* auto margin */
+
+.u-m-c {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+// margin t and b none
+.u-my-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+// margin l and r none
+.u-mx-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Top margin */
+
+@for $value from 1 to 26 {
+  .u-mt-#{$value * $base-size - $base-size} {
+    margin-top: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      margin-top: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+/* Right margin */
+
+@for $value from 1 to 26 {
+  .u-mr-#{$value * $base-size - $base-size} {
+    margin-right: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      margin-right: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+/* Bottom margin */
+
+@for $value from 1 to 26 {
+  .u-mb-#{$value * $base-size - $base-size} {
+    margin-bottom: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      margin-bottom: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+@for $value from 1 to 11 {
+  $num: '';
+
+  @if $value < 10 {
+    $num: '0#{$value}';
+  } @else {
+    $num: $value;
+  }
+
+  .u-mb-#{$num}em {
+    margin-bottom: $value + em !important;
+  }
+}
+
+/* Left margin */
+
+@for $value from 1 to 26 {
+  .u-ml-#{$value * $base-size - $base-size} {
+    margin-left: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      margin-left: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+@for $value from 1 to 11 {
+  $num: '';
+
+  @if $value < 10 {
+    $num: '0#{$value}';
+  } @else {
+    $num: $value;
+  }
+
+  .u-ml-#{$num}em {
+    margin-left: $value + em !important;
+  }
+}

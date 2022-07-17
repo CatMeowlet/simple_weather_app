@@ -1,0 +1,85 @@
+/*
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ VARIABLE FOR MIXINS _media.scss
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+
+// Breakpoints
+$breakpoint-min-desktop: 1200px;
+$breakpoint-min-laptop: 992px;
+$breakpoint-min-tablet: 768px;
+$breakpoint-max-phone: 767px;
+
+// Initial | base size
+$base-size: 5;
+$body-min-height: 100vh;
+// Wrapper size
+$wrap-desktop: 1140px; // mixin : is-pc
+$wrap-laptop: 960px; // mixin : is-laptop
+$wrap-tablet: 720px; // mixin : is-tablet
+$wrap-phone: 540px; // mixin : is-sp
+
+$wrap-max-width: initial;
+$wrap-wp-margin: auto;
+
+$gutter-pc: 20px;
+$gutter-sp: 10px;
+
+$content-padding: 3em;
+
+/*
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ VARIABLE FOR MIXINS _font-line.scss
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+$font-family-navlabel: 'Rubik', sans-serif;
+$font-family-base: 'Noto Sans JP', sans-serif;
+$font-family-en: 'Poppins', sans-serif;
+$font-family-extra: 'yosugara', sans-serif;
+$font-family-article: 'Miriam Libre', system-ui, BlinkMacSystemFont,
+  -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+  Droid Sans, Helvetica Neue, sans-serif;
+
+$font-size-base: 16;
+$font-weight-base: 400;
+$font-weight-bold: 700;
+
+// ---------------------------------------------------------------
+//  Line-hieght
+// ---------------------------------------------------------------
+$line-height-base: 1.75;
+
+// ---------------------------------------------------------------
+//  header height and sidebar width relevant to header
+// ---------------------------------------------------------------
+$navigation-h: 66px;
+$wrap-sidebar: $navigation-h;
+$wrap-height-topbar: $navigation-h;
+
+// radi-border
+$color-border: #707070;
+//validation
+$color-valid: #e5f9da;
+$color-invalid: #f6d4d4;
+$color-required: #d65c5c;
+$color-optional: #5a6074;
+$color-any: #5eba9b;
+$color-error: #e83131;
+// fonts
+$color-text-default: #202020;
+$color-text-sub: #808080;
+$color-text01: #303030;
+$color-text02: rgba(255, 255, 255, 0.66);
+$color-text03: #454545;
+$color-text04: #464646;
+$color-text05: #666;
+
+$color-text-heading: #c9e6f9;
+
+$color-main: #5eafed;
+$color-sub: #5b6060;
+$color-accent: #ff8126;
+$color-primary: $color-main;
+$color-primary-alt: $color-sub;
+$color-secondary: $color-accent;
+$bg-color-footer: #eaeaea;

@@ -1,0 +1,15 @@
+.p-header {
+    $p-header: ".p-header";
+    &__hamburger {
+        z-index: 99;
+    }
+    &__navbar {
+        transition: all 0.3s linear;
+    }
+    &.scrolling,
+    &.scrolling-reached-bottom {
+        #{$p-header}__navbar {
+            background: $color-accent;
+        }
+    }
+}

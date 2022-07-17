@@ -1,0 +1,13 @@
+.c-alert {
+  padding: 2rem 1rem;
+  margin: 1em 0;
+  &--danger {
+    border-left: 3px solid red;
+    background-color: #fff6f7;
+  }
+
+  &--success {
+    border-left: 3px solid #00c851;
+    background-color: #f4fff6;
+  }
+}

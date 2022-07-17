@@ -1,0 +1,55 @@
+/* display - utility
+--------------------------------------------------------- */
+.u-d-floating {
+    position: fixed;
+    transform: translate3d(0, 0, 0);
+}
+
+.u-d-tb {
+    display: table !important;
+}
+
+.u-d-tbc {
+    display: table-cell !important;
+}
+
+.u-d-b {
+    display: block !important;
+}
+
+.u-d-ib {
+    display: inline-block !important;
+}
+
+.u-d-n {
+    display: none !important;
+
+    &-pc {
+        @include is-pc {
+            display: none !important;
+        }
+    }
+    &-laptop{
+        @include is-laptop{
+            display: none !important;
+        }
+    }
+    &-tablet{
+        @include is-tablet{
+            display: none !important;
+        }
+    }
+    &-responsive{
+        @include is-responsive{
+            display: none !important;
+        }
+    }
+    &-sp {
+        @include is-sp {
+            display: none !important;
+        }
+    }
+}
+.u-d-f {
+    display: flex !important;
+}

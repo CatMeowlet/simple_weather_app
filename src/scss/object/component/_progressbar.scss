@@ -1,0 +1,83 @@
+.c-progressbar {
+  position: relative;
+  &--ring {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    &--medium {
+      width: 82px;
+      height: 82px;
+    }
+    &--small {
+      width: 60px;
+      height: 60px;
+    }
+    &__circle {
+      stroke: #e0e0e0;
+      stroke-width: 6;
+      fill: transparent;
+      transition: stroke-dashoffset 0.35s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke-linecap: round;
+      &--green,
+      &--red {
+        position: absolute;
+      }
+      &--green {
+        stroke: #5eba9b;
+      }
+      &--red {
+        stroke: #d65c5c;
+      }
+    }
+  }
+
+  &--stick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 58px;
+    &__bg {
+      background-color: #ebebeb;
+      height: 100%;
+      width: 10px;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-end;
+    }
+    &__filler {
+      background-color: #1e72be;
+      height: 0%;
+      width: 10px;
+      border-radius: 12px;
+      transform: rotate(-180deg);
+      transition: height 0.3s ease-in-out;
+    }
+  }
+  &__circle02 {
+    display:flex !important; 
+    align-items:center !important; 
+    justify-content:center !important; 
+    position:relative !important;
+  
+      & circle:last-child {
+        transform-origin: center; 
+      }
+  }
+  
+
+  &--radial {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    border: #dddddd solid 1px;
+    transition: transform 0.3s ease;
+    
+    &__inner {
+      border: #1e72be 2px solid;
+      background-color: rgba(30, 114, 190, 0.1);
+      transform: scale(0);
+    }
+  }
+}

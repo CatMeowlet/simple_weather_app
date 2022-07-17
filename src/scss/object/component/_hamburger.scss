@@ -1,0 +1,99 @@
+.c-hamburger {
+    cursor: pointer;
+    display: inline-block;
+    &__container {
+        width: auto;
+        margin: 0 auto;
+        transition: all 0.7s ease;
+        @include is-responsive {
+            padding-left: 15px;
+        }
+        .bar,
+        span {
+            display: block;
+            height: 2px;
+            width: 30px;
+            background: #5B6060;
+            margin: 6px auto;
+        }
+        &--default,
+        &--forward,
+        &--return,
+        &--fall {
+            &--hover:hover,
+            &.override {
+                .bar,
+                span {
+                    background-color: #5B6060;
+                    transition: all 0.7s ease;
+                }
+            }
+        }
+        &--default {
+            &--hover:hover,
+            &.override {
+                span {
+                    &:nth-child(1) {
+                        transform: translateY(6px) rotateZ(45deg);
+                    }
+                    &:nth-child(2) {
+                        width: 0;
+                        margin: 0 auto;
+                    }
+                    &:nth-child(3) {
+                        transform: translateY(-10px) rotateZ(-45deg);
+                    }
+                }
+            }
+        }
+        &--forward {
+            &--hover:hover,
+            &.override {
+                span {
+                    &:nth-child(1) {
+                        transform: rotateZ(45deg) translateY(5px);
+                        width: 15px;
+                    }
+                    &:nth-child(2) {
+                        transform: translateX(-12px);
+                    }
+                    &:nth-child(3) {
+                        transform: rotateZ(-45deg) translateY(-5px);
+                        width: 15px;
+                    }
+                }
+            }
+        }
+        &--return {
+            &--hover:hover,
+            &.override {
+                span {
+                    &:nth-child(1) {
+                        transform: rotateZ(-45deg) translateY(5px);
+                        width: 15px;
+                    }
+                    &:nth-child(2) {
+                        transform: translateX(12px);
+                    }
+                    &:nth-child(3) {
+                        transform: rotateZ(45deg) translateY(-5px);
+                        width: 15px;
+                    }
+                }
+            }
+        }
+        &--fall {
+            &--hover:hover,
+            &.override {
+                span {
+                    &:first-child {
+                        transform: translateY(15px);
+                    }
+                    &:last-child {
+                        transform: translateY(-15px);
+                    }
+                }
+            }
+        }
+    }
+}

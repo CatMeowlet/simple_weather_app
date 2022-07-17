@@ -1,0 +1,76 @@
+.c-multistep {
+  height: 34px;
+  width: 34px;
+  border-radius: 100%;
+  background-color: #fff;
+  //   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.16));
+  box-shadow: 0px 1px 6px #00000029;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  &__idle {
+    @include font-line(17, 17);
+    color: #9f9f9f;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  &__complete,
+  &__incomplete {
+    border-radius: 100%;
+    &--grey {
+      background-color: #7c7c7c;
+    }
+    &--orange {
+      background-color: #f29802;
+    }
+    &--blue {
+      background-color: #0ea0e9;
+    }
+    &--lightgreen {
+      background-color: #8dc21f;
+    }
+  }
+  &__incomplete {
+    height: 14px;
+    width: 14px;
+  }
+  &__complete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: inherit;
+    // padding: 12.6px 10.75px 12.76px 10px;
+    img {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  &__seperator {
+    width: 100%;
+    background-color: #c9c9c9;
+    height: 1.5px;
+    &--fullorange {
+      background-color: #f29802;
+    }
+    &--fullblue {
+      background-color: #0ea0e9;
+    }
+    &--fullgreen {
+      background-color: #8dc21f;
+    }
+
+    &--split {
+      &--ob {
+        background: linear-gradient(90deg, #f29802 50%, #0ea0e9 50%);
+      }
+      &--blg {
+        background: linear-gradient(90deg, #0ea0e9 50%, #8dc21f 50%);
+      }
+      &--lgg {
+        background: linear-gradient(90deg, #8dc21f 50%, #7c7c7c 50%);
+      }
+    }
+  }
+}

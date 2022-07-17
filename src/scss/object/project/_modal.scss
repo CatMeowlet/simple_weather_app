@@ -1,0 +1,266 @@
+.p-modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  flex-flow: column;
+  justify-content: center;
+  &--active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &__background {
+    height: inherit;
+    width: inherit;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    cursor: pointer;
+  }
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    @include font-line(32, 32);
+    color: $color-accent;
+    margin-bottom: 1rem;
+  }
+  &__check {
+    text-align: center;
+  }
+  &__contents {
+    background: #fff;
+    margin: 0 auto;
+    width: 50vw;
+    z-index: 1;
+    border-radius: 12px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 2rem;
+    @include is-responsive {
+      width: calc(100vw - 1rem);
+      padding: 1rem;
+    }
+  }
+  &__list {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      .label {
+        color: $color-main;
+        font-weight: bold;
+        @include font-line(20, 20);
+      }
+      .data {
+        @include font-line(16);
+        color: $color-text-default;
+      }
+    }
+  }
+  &__buttonArea {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  &__button {
+    $main: '&';
+    width: 48%;
+    border: 1.5px solid transparent;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-shadow: 15px 15px 30px #0000002c;
+    margin: auto;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      transform: rotate(45deg);
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      right: 18px;
+    }
+    // extra
+    &--nobullet {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+    &--return,
+    &--cancel {
+      &:after {
+        border: unset;
+        right: unset;
+        border-bottom: 2px solid #fff;
+        border-left: 2px solid #fff;
+        left: 18px;
+      }
+    }
+    &--disable {
+      pointer-events: none !important;
+      opacity: 0.5;
+    }
+    &--roundCorner {
+      border-radius: 150px;
+    }
+    &--smoothCorner {
+      border-radius: 6px;
+    }
+    // size
+    &--xxl {
+      @include is-laptop {
+        height: 90;
+        @include font-line(23, 23);
+      }
+    }
+    &--xl {
+      @include is-responsive {
+        height: 70px;
+      }
+      @include is-laptop {
+        height: 80px;
+        @include font-line(20, 20);
+      }
+    }
+    &--l {
+      @include is-responsive {
+        height: 45px;
+        @include font-line(16, 16);
+      }
+      @include is-laptop {
+        height: 56px;
+        @include font-line(16, 16);
+      }
+    }
+    &--m {
+      @include is-responsive {
+        height: 45px;
+        @include font-line(16, 16);
+      }
+      @include is-laptop {
+        height: 50px;
+        @include font-line(20, 20);
+      }
+    }
+    &--s {
+      @include is-responsive {
+        height: 40px;
+        @include font-line(14, 14);
+      }
+      @include is-laptop {
+        height: 36px;
+        @include font-line(14, 14);
+      }
+    }
+    //color
+    &--main {
+      background-color: $color-main;
+      border-color: $color-main;
+      color: #fff !important;
+      &:not(#{$main}--nohover):hover {
+        background-color: #fff;
+        border-color: $color-main;
+        color: $color-main !important;
+        &:after {
+          border-color: $color-main !important;
+        }
+      }
+      &--w {
+        background-color: #fff;
+        border-color: $color-main;
+        color: $color-main;
+        &:after {
+          border-color: $color-main;
+        }
+        &:not(#{$main}--nohover):hover {
+          background-color: $color-main;
+          border-color: $color-main;
+          color: #fff;
+          &:after {
+            border-color: #fff !important;
+          }
+        }
+      }
+    }
+    &--sub {
+      background-color: $color-sub;
+      border-color: $color-sub;
+      color: #fff !important;
+      &:not(#{$main}--nohover):hover {
+        background-color: #fff;
+        border-color: $color-sub;
+        color: $color-sub !important;
+        &:after {
+          border-color: $color-sub !important;
+        }
+      }
+      &:after {
+        border-color: #fff !important;
+      }
+      &--w {
+        background-color: #fff;
+        border-color: $color-sub;
+        color: $color-sub;
+        &:after {
+          border-color: $color-sub;
+        }
+        &:not(#{$main}--nohover):hover {
+          background-color: $color-sub;
+          border-color: $color-sub;
+          color: #fff;
+          &:after {
+            border-color: #fff !important;
+          }
+        }
+      }
+    }
+    &--accent {
+      background-color: $color-accent;
+      border-color: $color-accent;
+      color: #fff !important;
+      &:not(#{$main}--nohover):hover {
+        background-color: #fff;
+        border-color: $color-accent;
+        color: $color-accent !important;
+        &:after {
+          border-color: $color-accent !important;
+        }
+      }
+      &--w {
+        background-color: #fff;
+        border-color: $color-accent;
+        color: $color-accent;
+        &:after {
+          border-color: $color-accent;
+        }
+        &:not(#{$main}--nohover):hover {
+          background-color: $color-accent;
+          border-color: $color-accent;
+          color: #fff;
+          &:after {
+            border-color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}

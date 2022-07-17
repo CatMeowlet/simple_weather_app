@@ -1,0 +1,75 @@
+$array: (
+  'c': 'center',
+  'fs': 'flex-start',
+  'fe': 'flex-end',
+  'sb': 'space-between',
+  'sa': 'space-around',
+  'se': 'space-evenly',
+  'l': 'left',
+  'r': 'right',
+);
+$labels: ('sm', 'md', 'l', 'xl', 'responsive');
+
+@each $label in $labels {
+  @each $i, $config in $array {
+    @if ($i != 'l' and $i != 'r') {
+      .u-jc-#{$label}-#{$i} {
+        @if $label== 'sm' {
+          @include is-sp {
+            justify-content: #{$config};
+          }
+        } @else if $label== 'md' {
+          @include is-tablet {
+            justify-content: #{$config};
+          }
+        } @else if $label== 'l' {
+          @include is-laptop {
+            justify-content: #{$config};
+          }
+        } @else if $label== 'xl' {
+          @include is-pc {
+            justify-content: #{$config};
+          }
+        } @else if $label== 'responsive' {
+          @include is-responsive {
+            justify-content: #{$config};
+          }
+        }
+      }
+    }
+
+    .u-c-#{$label}-#{$i} {
+      @if $label== 'sm' {
+        @include is-sp {
+          @if $i== 'c' {
+            margin: 0 auto;
+          } @else if $i== 'l' {
+            margin: 0 auto 0 0;
+          } @else if $i== 'r' {
+            margin: 0 0 0 auto;
+          }
+        }
+      } @else if $label== 'md' {
+        @include is-tablet {
+          @if $i== 'c' {
+            margin: 0 auto;
+          } @else if $i== 'l' {
+            margin: 0 auto 0 0;
+          } @else if $i== 'r' {
+            margin: 0 0 0 auto;
+          }
+        }
+      } @else if $label== 'l' {
+        @include is-laptop {
+          @if $i== 'c' {
+            margin: 0 auto;
+          } @else if $i== 'l' {
+            margin: 0 auto 0 0;
+          } @else if $i== 'r' {
+            margin: 0 0 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+/***
+    ex.
+    @media min-width: 1200px - is-desktop | is-pc
+    |_ container : 1140px
+    @media min-width: 992px - is-laptop
+    |_ container : 960px
+    @media min-width: 768px - is-tablet
+    |_ container : 720px
+    @media max-width: 767px - is-phone  | is-sp
+    |_ container : 540px
+
+    extra
+    @media max-width: 991px - is-responsive <-- where the 991px responsive style starts since 992px is for laptop
+
+
+*/
+@mixin is-pc {
+    @media only screen and (min-width: $breakpoint-min-desktop) {
+        @content;
+    }
+}
+
+@mixin is-laptop {
+    @media only screen and (min-width: $breakpoint-min-laptop) {
+        @content;
+    }
+}
+
+@mixin only-laptop {
+    @media (max-width: $breakpoint-min-desktop - 1px) and (min-width: $breakpoint-min-laptop) {
+        @content;
+    }
+}
+
+@mixin is-tablet {
+    @media only screen and (min-width: $breakpoint-min-tablet) {
+        @content;
+    }
+}
+
+@mixin only-tablet {
+    @media (max-width: $breakpoint-min-laptop - 1px) and (min-width: $breakpoint-min-tablet) {
+        @content;
+    }
+}
+
+
+@mixin is-responsive {
+    @media only screen and (max-width: $breakpoint-min-laptop - 1px) {
+        @content;
+    }
+}
+
+@mixin is-sp {
+    @media only screen and (max-width: $breakpoint-max-phone) {
+        @content;
+    }
+}
+
+// @include is-between()
+@mixin is-between($between-max, $between-min) {
+    @media (max-width: $between-max) and (min-width: $between-min) {
+        @content;
+    }
+}
+
+// @include is-max()
+@mixin is-max($is-max) {
+    @media only screen and (max-width: $is-max) {
+        @content;
+    }
+}
+
+// @include is-min()
+@mixin is-min($is-min) {
+    @media only screen and (min-width: $is-min) {
+        @content;
+    }
+}

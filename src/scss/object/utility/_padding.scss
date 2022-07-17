@@ -1,0 +1,79 @@
+/* padding - utility
+--------------------------------------------------------- */
+// padding t and b none
+.u-py-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+// padding l and r none
+.u-px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Top padding */
+
+@for $value from 1 to 12 {
+  .u-pt-#{$value * $base-size - $base-size} {
+    padding-top: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      padding-top: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+/* Right padding */
+
+@for $value from 1 to 12 {
+  .u-pr-#{$value * $base-size - $base-size} {
+    padding-right: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      padding-right: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+/* Bottom padding */
+
+@for $value from 1 to 12 {
+  .u-pb-#{$value * $base-size - $base-size} {
+    padding-bottom: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      padding-bottom: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+/* Left padding */
+
+@for $value from 1 to 12 {
+  .u-pl-#{$value * $base-size - $base-size} {
+    padding-left: $base-size * $value - $base-size + px !important;
+
+    //sp
+    @include is-sp {
+      padding-left: floor(($base-size * $value - $base-size) * 0.5) + px !important;
+    }
+  }
+}
+
+@for $value from 1 to 12 {
+  $num: '';
+
+  @if $value < 12 {
+    $num: '0#{$value}';
+  } @else {
+    $num: $value;
+  }
+
+  .u-pl-#{$num}em {
+    padding-left: $value + em !important;
+  }
+}

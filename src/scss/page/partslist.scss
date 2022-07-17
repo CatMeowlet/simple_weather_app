@@ -1,0 +1,112 @@
+@use 'sass:math';
+@import '../core/mixins/*';
+@import '../core/root/_variables';
+.partslist {
+  padding: 5rem 1rem;
+  &__inner {
+    align-items: self-start;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.04);
+    padding: 0.5rem;
+  }
+  &__heading {
+    @include font-line(40, 40);
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-sub;
+    @include is-responsive {
+      @include font-line(20, 20);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  pre {
+    padding: 10px;
+    background: #eeeeee;
+    font-size: 12px;
+    font-size: 0.75rem;
+    border: solid 1px #333;
+    width: 100%;
+    overflow: scroll;
+    font-family: monospace, monospace;
+    margin-bottom: 1rem;
+  }
+  &__floatMenu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    background: $color-text04;
+    padding: 0 2rem;
+    transition: transform 0.3s ease-out;
+    transform: translateX(100%);
+    $menu: &;
+    &.isOpen {
+      transform: translateX(0);
+      z-index: 99;
+      #{$menu}__toggle {
+        &:before {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &__toggle {
+      $dimension: 40px;
+      border-radius: 100%;
+      height: $dimension;
+      position: absolute;
+      width: $dimension;
+      display: flex;
+      align-items: center;
+      background: $color-text04;
+      border: $color-text04;
+      left: math.div($dimension, 2) * -1;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      &:before {
+        content: '';
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 5px;
+        position: absolute;
+        transform: rotate(135deg);
+        left: 8px;
+        transition: transform 0.3s ease-out;
+      }
+    }
+    &__item {
+      position: relative;
+      &:before {
+        content: '';
+        height: 10px;
+        width: 10px;
+        background: $color-accent;
+        border-radius: 100%;
+        position: absolute;
+        left: -15px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+        a {
+          color: $color-accent;
+        }
+      }
+      a {
+        color: #fff;
+        text-transform: capitalize;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+}

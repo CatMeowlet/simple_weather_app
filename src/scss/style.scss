@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/*
+    core
+        > media query and root variable ( includes reset )
+
+    layout
+        > header/main/sidebar/footer
+        > define styles for large container
+
+        *note :
+            > container : width & height , padding , margin
+            > usage : header , main , sidebar(side nav) , footer
+    object
+        >component
+            > button, card, stamp, seal
+            > good for small repepetive class
+
+            *note :
+                > button , card, table, typography, list, badge
+        >project
+            > Component that is unique to a page
+             *note :
+                > forms , promotion, article list, pagination
+
+        >utility
+            > for minor changes
+
+            *note :
+                > width , font-size, color, margin , padding
+
+    page
+        > modify/edit some styles in object and layout
+
+        *note :
+            > to minimize messing up with global styles
+
+    style.scss
+        > compile all scss file
+*/
+@use 'sass:math';
+@import 'core/**/*';
+@import 'layout/**/*';
+@import 'object/component/**/*';
+@import 'object/project/**/*';
+@import 'object/utility/**/*';

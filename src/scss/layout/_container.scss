@@ -1,0 +1,57 @@
+.l-container {
+    padding: 20px 0;
+    width: 100%;
+    @include is-sp {
+        display: block;
+    }
+    &--under {
+        @include is-tablet {
+            padding-top: 40px;
+        }
+    }
+    &.is-column2 {
+        display: flex;
+        margin: 0 auto;
+        flex: 1 1 100%;
+        @include is-sp {
+            padding-top: 20px;
+            display: block;
+        }
+        @include is-tablet {
+            margin: 0 auto;
+        }
+        .left,
+        .right {
+            width: 50%;
+            @include is-sp {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &.is-column3 {
+        display: flex;
+        margin: 0 auto;
+        @include is-sp {
+            padding-top: 20px;
+            display: block;
+        }
+        @include is-tablet {
+            margin: 0 auto;
+        }
+        .left,
+        .center,
+        .right {
+            flex: 1 1 33.33%;
+            @include is-sp {
+                flex: 1 1 100%;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    &__left,
+    &__right {
+        width: 100%;
+        margin: auto;
+    }
+}

@@ -1,0 +1,33 @@
+.c-card {
+    padding: 2em 1em;
+    background-color: #fff;
+
+    &--curve {
+        border-radius: 12px;
+    }
+    &--shadow {
+        filter: drop-shadow(2px 2px 4px rgba(116, 116, 116, 0.583));
+    }
+
+    &__head,
+    &__body {
+        margin: 1em 0;
+    }
+    &__head {
+        &__title {
+            text-align: left;
+            &--center {
+                text-align: center;
+            }
+        }
+    }
+    &__body {
+        &__form {
+            padding: 0 2em;
+        }
+    }
+
+    &__bottom{
+        text-align: center;
+    }
+}

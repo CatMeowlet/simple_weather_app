@@ -1,0 +1,31 @@
+.l-navigation {
+    width: 100%;
+    height: $wrap-height-topbar;
+    display: inline-flex;
+    flex-direction: row;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 99;
+    &--fixed {
+        position: fixed;
+    }
+    &--side {
+        display: flex;
+        position: fixed;
+        background-color: #3a3a3a;
+        z-index: 99;
+        @include is-laptop {
+            width: $wrap-sidebar;
+            height: 100vh;
+            flex-flow: column;
+        }
+        @include is-responsive {
+            width: 100%;
+            height: $wrap-sidebar;
+            justify-content: space-evenly;
+            bottom: 0;
+        }
+    }
+}

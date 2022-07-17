@@ -1,0 +1,190 @@
+.c-button {
+  $main: &;
+  width: 100%;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  box-shadow: 15px 15px 30px #0000002c;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    right: 18px;
+  }
+  // extra
+  &--nobullet {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+  &--return {
+    &:after {
+      border: unset;
+      right: unset;
+      border-bottom: 2px solid #fff;
+      border-left: 2px solid #fff;
+      left: 18px;
+    }
+  }
+  &--disable {
+    pointer-events: none !important;
+    opacity: 0.5;
+  }
+  &--roundCorner {
+    border-radius: 150px;
+  }
+  &--smoothCorner {
+    border-radius: 6px;
+  }
+  // size
+  &--xxl {
+    @include is-laptop {
+      height: 90;
+      @include font-line(23, 23);
+    }
+  }
+  &--xl {
+    @include is-responsive {
+      height: 70px;
+    }
+    @include is-laptop {
+      height: 80px;
+      @include font-line(20, 20);
+    }
+  }
+  &--l {
+    @include is-responsive {
+      height: 45px;
+      @include font-line(16, 16);
+    }
+    @include is-laptop {
+      height: 56px;
+      @include font-line(16, 16);
+    }
+  }
+  &--m {
+    @include is-responsive {
+      height: 45px;
+      @include font-line(16, 16);
+    }
+    @include is-laptop {
+      height: 50px;
+      @include font-line(20, 20);
+    }
+  }
+  &--s {
+    @include is-responsive {
+      height: 40px;
+      @include font-line(14, 14);
+    }
+    @include is-laptop {
+      height: 36px;
+      @include font-line(14, 14);
+    }
+  }
+  //color
+  &--main {
+    background-color: $color-main;
+    border-color: $color-main;
+    color: #fff;
+    &:not(#{$main}--nohover):hover {
+      background-color: #fff;
+      border-color: $color-main;
+      color: $color-main;
+      &:after {
+        border-color: $color-main !important;
+      }
+    }
+    &--w {
+      background-color: #fff;
+      border-color: $color-main;
+      color: $color-main;
+      &:after {
+        border-color: $color-main;
+      }
+      &:not(#{$main}--nohover):hover {
+        background-color: $color-main;
+        border-color: $color-main;
+        color: #fff;
+        &:after {
+          border-color: #fff !important;
+        }
+      }
+    }
+  }
+  &--sub {
+    background-color: $color-sub;
+    border-color: $color-sub;
+    color: #fff;
+    &:not(#{$main}--nohover):hover {
+      background-color: #fff;
+      border-color: $color-sub;
+      color: $color-sub;
+      &:after {
+        border-color: $color-sub !important;
+      }
+    }
+    &:after {
+      border-color: #fff !important;
+    }
+    &--w {
+      background-color: #fff;
+      border-color: $color-sub;
+      color: $color-sub;
+      &:after {
+        border-color: $color-sub;
+      }
+      &:not(#{$main}--nohover):hover {
+        background-color: $color-sub;
+        border-color: $color-sub;
+        color: #fff;
+        &:after {
+          border-color: #fff !important;
+        }
+      }
+    }
+  }
+  &--accent {
+    background-color: $color-accent;
+    border-color: $color-accent;
+    color: #fff;
+    &:not(#{$main}--nohover):hover {
+      background-color: #fff;
+      border-color: $color-accent;
+      color: $color-accent;
+      &:after {
+        border-color: $color-accent !important;
+      }
+    }
+    &--w {
+      background-color: #fff;
+      border-color: $color-accent;
+      color: $color-accent;
+      &:after {
+        border-color: $color-accent;
+      }
+      &:not(#{$main}--nohover):hover {
+        background-color: $color-accent;
+        border-color: $color-accent;
+        color: #fff;
+        &:after {
+          border-color: #fff !important;
+        }
+      }
+    }
+  }
+}

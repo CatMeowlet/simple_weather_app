@@ -1,0 +1,66 @@
+.p-multistep {
+  width: 980px;
+  margin-bottom: 34px;
+  &__heading {
+    @include font-line(21, 35);
+    letter-spacing: 1.05px;
+    margin-bottom: 24px;
+    color: #051c01;
+    font-weight: bold;
+  }
+  &__progress {
+    width: inherit;
+    text-align: center;
+    &__inner,
+    &__item {
+      display: flex;
+      align-items: center;
+    }
+    &__inner {
+      width: 740px;
+      height: 94px;
+      margin: auto;
+      justify-content: space-between;
+    }
+    &__item {
+      flex-flow: column;
+      justify-content: center;
+      position: relative;
+      a {
+        position: relative;
+      }
+      .no,
+      .label {
+        position: absolute;
+        pointer-events: none;
+      }
+      .no {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        @include font-line(11, 19);
+        letter-spacing: 1.1px;
+        color: $color-text04;
+        top: -28px;
+      }
+      .label {
+        color: $color-text04;
+        @include font-line(12, 19);
+        letter-spacing: 0.6px;
+        text-align: center;
+        height: 38px;
+        bottom: -44px;
+        width: 100px;
+        font-weight: bold;
+        &--inactive {
+          color: #9f9f9f;
+        }
+      }
+
+      &.idle {
+        .label {
+          color: #9f9f9f;
+        }
+      }
+    }
+  }
+}

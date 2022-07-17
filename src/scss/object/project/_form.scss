@@ -1,0 +1,56 @@
+.p-form {
+  $parent: &;
+  &__group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    @include is-responsive {
+      flex-direction: column;
+    }
+    #{$parent}__container {
+      flex: 1 1 100%;
+      @include is-responsive {
+        width: 100%;
+      }
+      &:not(:only-child):not(:first-child) {
+        margin-left: 1rem;
+        @include is-responsive {
+          margin-left: unset;
+        }
+      }
+      &--buttons {
+        flex: unset;
+        min-width: 273.28px;
+        img {
+          margin-right: 11px;
+        }
+        button {
+          @include font-line(16, 16);
+          &:before {
+            margin-right: 4%;
+          }
+          &::after {
+            content: unset;
+          }
+        }
+      }
+    }
+    &--buttonArea {
+      margin-top: 2rem;
+      button,
+      a {
+        &:only-child {
+          max-width: 50%;
+          margin: auto;
+        }
+      }
+    }
+    &--upload {
+      padding: 20.2px 0 0;
+    }
+  }
+  & > &__container,
+  &__group {
+    margin-bottom: 1rem;
+  }
+}

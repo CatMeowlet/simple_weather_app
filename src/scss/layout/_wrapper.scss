@@ -1,0 +1,44 @@
+.l-wrap {
+  position: relative;
+  padding: 0 1rem;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include is-sp {
+    max-width: $wrap-phone;
+  }
+  @include is-tablet {
+    max-width: $wrap-tablet;
+  }
+  @include is-laptop {
+    max-width: $wrap-laptop;
+  }
+  @include is-pc {
+    max-width: $wrap-desktop;
+  }
+
+  &--fluid {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  &--sidebar {
+    @include is-laptop {
+      width: calc(100% - $wrap-sidebar);
+      margin-left: $wrap-sidebar;
+    }
+    &--padding {
+      padding: 1em;
+    }
+  }
+  &--lower {
+    &01 {
+      padding-top: 150px;
+    }
+    &02 {
+      padding-top: 42px;
+    }
+    &03 {
+      padding-top: 92px;
+    }
+  }
+}

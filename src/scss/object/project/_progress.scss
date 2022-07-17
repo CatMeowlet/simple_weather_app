@@ -1,0 +1,72 @@
+.p-progress {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__left {
+    &__header,
+    &__sub {
+      text-align: left;
+    }
+    &__header {
+      color: #1e72be;
+      @include font-line(21, 24);
+      margin-bottom: 16px;
+      letter-spacing: 1.2px;
+      font-weight: bold;
+      &--font24 {
+        @include font-line(24, 24);
+      }
+      &--font21 {
+        @include font-line(21, 21);
+      }
+    }
+    &__sub {
+      color: #7c7c7c;
+      @include font-line(14, 14);
+      letter-spacing: 0.7px;
+      font-weight: 400;
+      &--dark {
+        color: #051c01;
+      }
+      &--red {
+        color: #d65c5c;
+      }
+    }
+  }
+  &__right {
+    display: flex;
+  }
+}
+.p-progressbar {
+  position: relative;
+  height: 82px;
+  width: 82px;
+  &__text {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: inherit;
+    width: inherit;
+    &--green {
+      color: #5eba9b;
+    }
+    &--red {
+      color: #d65c5c;
+    }
+    span {
+      font-family: Arial, Helvetica, sans-serif;
+      @include font-line(11, 11);
+      &:last-child {
+        font-weight: bold;
+        @include font-line(16, 16);
+        margin-top: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.p-article {
+    &__item {
+        border-bottom: 1px solid $color-text-sub;
+        &:first-child {
+            border-top: 1px solid $color-text-sub;
+        }
+    }
+    &__buttonArea {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        a {
+            width: 350px;
+        }
+    }
+}

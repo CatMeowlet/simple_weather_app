@@ -1,0 +1,131 @@
+.p-footer {
+    background-color: $bg-color-footer;
+    padding-top: 50px;
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &__upper {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    &__below {
+        padding-top: 40px;
+        .left {
+            flex: 1 1 12% !important;
+        }
+    }
+    &__left {
+        @include is-sp {
+            flex: 1 1 100%;
+            text-align: center;
+        }
+    }
+    &__branding {
+        width: 70%;
+        margin-bottom: 20px;
+        @include is-sp {
+            width: 100%;
+        }
+        img {
+            @include is-sp {
+                max-width: 60%;
+            }
+        }
+    }
+    &__desc {
+        color: #fff;
+        @include font-line(13, 20);
+    }
+    &__sitemap {
+        @include is-pc {
+            padding: 0 0 0 80px;
+        }
+        @include is-sp {
+            text-align: center;
+        }
+    }
+    &__contact {
+        @include is-pc {
+            padding: 0 0 0 25px;
+        }
+        @include is-sp {
+            text-align: center;
+        }
+    }
+    &__siteItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        @include is-responsive {
+            justify-content: center;
+        }
+        .link {
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease-out;
+            text-decoration: none;
+            color: white;
+            justify-content: space-between;
+            &:hover {
+                color: $color-primary;
+            }
+            &__fav {
+                height: 60px;
+                width: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &__name {
+                padding-left: 15px;
+            }
+        }
+    }
+    .ttl {
+        color: white;
+        @include font-line(18, 18);
+        font-weight: 700;
+        margin-bottom: 20px;
+        @include is-responsive {
+            text-align: center;
+        }
+        a {
+            transition: color 0.3s ease-out;
+            text-decoration: none;
+            color: white;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    .tel,
+    .location,
+    .building {
+        color: #fff;
+        padding: 10px 0;
+        display: flex;
+        align-items: flex-start;
+        @include is-sp {
+            justify-content: center;
+        }
+        .icon {
+            @include font-line(17, 17);
+            display: inline-block;
+        }
+        .text {
+            @include font-line(14, 18);
+            display: inline-block;
+            padding-left: 15px;
+        }
+    }
+    .reference,
+    .copyright {
+        color: #ffffff;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        @include font-line(13);
+        width: 100%;
+        text-align: center;
+    }
+}
